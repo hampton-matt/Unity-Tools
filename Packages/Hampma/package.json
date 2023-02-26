@@ -1,5 +1,14 @@
 {
-    "name": "com.hampma.tools",
-    "version": "0.0.1",
-    "displayName": "Matt Hampton's Unity Tools"
+  "name": "com.hampma.tools",
+  "version": "0.0.1",
+  "displayName": "Hampma Tools",
+  "description": "Colleciton of Unity Tools created by Matt Hampton.\n\nFeatures:\n1. Project folder structure automation",
+  "documentationUrl": "https://github.com/hampton-matt/Unity-Tools",
+  "changelogUrl": "https://github.com/hampton-matt/Unity-Tools/releases",
+  "licensesUrl": "https://github.com/hampton-matt/Unity-Tools",
+  "author": {
+    "name": "Matt Hampton",
+    "email": "mail@matthampton.co.uk",
+    "url": "https://www.matthampton.co.uk"
+  }
 }
