@@ -1,0 +1,45 @@
+using System.Collections.Generic;
+using UnityEngine;
+using Hampma.Tools;
+
+namespace Hampma.Core
+{
+    public class S_BootManager : MonoBehaviour
+    {
+        
+        [SerializeField]
+        private List<Scene> _bootScenes;
+
+        [SerializeField]
+        private List<Scene> _editorOnlyScenes;
+
+        void Start()
+        {
+            BootScenes();
+        }
+
+        private void BootScenes()
+        {
+            List<Scene> scenes = new List<Scene>();
+            scenes.AddRange(_bootScenes);
+            #if UNITY_EDITOR
+            scenes.AddRange(_editorOnlyScenes);
+            Debug.Log(scenes.Count);
+            #endif
+            if (scenes == null) 
+            {
+                Debug.Log("BootManager: \tWarn \tNo Scenes to Boot");
+                return;
+            }
+            foreach(Scene sc in scenes) {
+                if (sc.ToString().Equals("S_Boot")) 
+                {
+                    Debug.Log("BootManager: \tWarn \tS_Boot has been ignored from boot list");
+                    continue;
+                }
+                S_SceneManager.OpenScene(sc.ToString());
+            }
+        }
+
+    }
+}
